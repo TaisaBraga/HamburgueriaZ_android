@@ -10,109 +10,162 @@
     tools:layout_editor_absoluteX="-17dp"
     tools:layout_editor_absoluteY="48dp">
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="121dp"
-        android:layout_height="47dp"
-        android:text="Onin rings"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="307dp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/navText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/text_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Digite seu nome"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="97dp" />
+        android:id="@+id/inputText"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="34dp"
+        android:background="@color/white"
+        android:textColorHint="@color/Grey"
+        android:hint="@string/inputText"
+        app:layout_constraintBottom_toTopOf="@+id/baconCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navText"
+        tools:hint="Digite seu nome" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/navText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Faça seu pedido!"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="64dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/navText"
+        app:layout_constraintBottom_toTopOf="@+id/inputText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        tools:text="Faça seu pedido!" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/amountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quantidade"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="391dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="447dp" />
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/amountText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onionRingCheckBox"
+        tools:text="Quantidade" />
 
     <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="117dp"
-        android:layout_height="46dp"
-        android:text="Bacon"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:id="@+id/baconCheckBox"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="18dp"
+        android:text="@string/baconCheckbox"
+        app:layout_constraintBottom_toTopOf="@+id/cheeseCheckbox"
+        app:layout_constraintEnd_toEndOf="@+id/cheeseCheckbox"
+        app:layout_constraintStart_toStartOf="@+id/inputText"
+        app:layout_constraintTop_toBottomOf="@+id/inputText"
+        tools:text="Bacon" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="120dp"
-        android:layout_height="51dp"
-        android:text="Queijo"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="240dp" />
+        android:id="@+id/cheeseCheckbox"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/cheeseCheckbox"
+        app:layout_constraintBottom_toTopOf="@+id/onionRingCheckBox"
+        app:layout_constraintEnd_toEndOf="@+id/onionRingCheckBox"
+        app:layout_constraintStart_toStartOf="@+id/inputText"
+        app:layout_constraintTop_toBottomOf="@+id/baconCheckBox"
+        tools:text="Queijo" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="51dp"
-        android:layout_height="51dp"
-        android:clickable="true"
-        android:text="+"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="431dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="60dp"
-        android:layout_height="52dp"
-        android:clickable="true"
-        android:text="-"
-        app:cornerRadius="@null"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="430dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resumo do pedido"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="513dp" />
+    <CheckBox
+        android:id="@+id/onionRingCheckBox"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginBottom="37dp"
+        android:text="@string/onionRingCheckBox"
+        app:layout_constraintBottom_toTopOf="@+id/amountText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cheeseCheckbox"
+        tools:text="Onions rings" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/totalOrderValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="R$ 0"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="548dp" />
+        android:layout_marginBottom="15dp"
+        android:text="@string/totalOrderValue"
+        app:layout_constraintBottom_toTopOf="@+id/orderButton"
+        app:layout_constraintStart_toStartOf="@+id/totalOrder"
+        tools:text="R$ 0"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/orderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fazer pedido"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="592dp" />
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/orderButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Fazer pedido" />
+
+    <Button
+        android:id="@+id/addValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/addValue"
+        app:layout_constraintBaseline_toBaselineOf="@+id/amountValue"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="+" />
+
+    <Button
+        android:id="@+id/reduceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:text="@string/reduceValue"
+        app:layout_constraintBaseline_toBaselineOf="@+id/amountValue"
+        app:layout_constraintStart_toEndOf="@+id/amountValue"
+        tools:text="-" />
+
+    <TextView
+        android:id="@+id/amountValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginBottom="55dp"
+        android:text="@string/amountValue"
+        app:layout_constraintBottom_toTopOf="@+id/totalOrder"
+        app:layout_constraintStart_toEndOf="@+id/addValue"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/totalOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/totalOrder"
+        app:layout_constraintBottom_toTopOf="@+id/totalOrderValue"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Resumo do pedido" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
