@@ -8,8 +8,17 @@
     android:padding="16dp"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteX="-17dp"
-    tools:layout_editor_absoluteY="48dp">
+    tools:layout_editor_absoluteY="48dp"
+    >
 
+    <ImageView
+        android:id="@+id/bannerImage"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:src="@drawable/hamb_image"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/bannerImage"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -21,6 +30,7 @@
         android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toTopOf="@+id/navText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -34,8 +44,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="34dp"
         android:background="@color/white"
-        android:textColorHint="@color/Grey"
         android:hint="@string/inputText"
+        android:textColorHint="@color/Grey"
         app:layout_constraintBottom_toTopOf="@+id/baconCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,8 +68,8 @@
         android:id="@+id/amountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="168dp"
         android:text="@string/amountText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/onionRingCheckBox"
@@ -95,10 +105,9 @@
 
     <CheckBox
         android:id="@+id/onionRingCheckBox"
-        android:layout_width="124dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginBottom="37dp"
+        android:layout_width="185dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
         android:text="@string/onionRingCheckBox"
         app:layout_constraintBottom_toTopOf="@+id/amountText"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +122,7 @@
         android:text="@string/totalOrderValue"
         app:layout_constraintBottom_toTopOf="@+id/orderButton"
         app:layout_constraintStart_toStartOf="@+id/totalOrder"
-        tools:text="R$ 0"/>
+        tools:text="R$ 0" />
 
     <Button
         android:id="@+id/orderButton"

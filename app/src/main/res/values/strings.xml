@@ -13,4 +13,5 @@
     <string name="totalOrder">totalOrder</string>
     <string name="amountValue">amountValue</string>
     <string name="totalOrderValue">totalOrderValue</string>
+    <string name="bannerImage">banner_da_hamburgueria</string>
 </resources>
