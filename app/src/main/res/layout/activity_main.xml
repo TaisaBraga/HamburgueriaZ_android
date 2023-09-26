@@ -5,176 +5,168 @@
     android:id="@+id/text_input"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteX="-17dp"
-    tools:layout_editor_absoluteY="48dp"
-    >
+    android:fillViewport="true"
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/bannerImage"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:src="@drawable/hamb_image"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/bannerImage"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        app:titleTextColor="#fff"
+        app:title="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toTopOf="@+id/navText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/inputText"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="34dp"
-        android:background="@color/white"
-        android:hint="@string/inputText"
-        android:textColorHint="@color/Grey"
-        app:layout_constraintBottom_toTopOf="@+id/baconCheckBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navText"
-        tools:hint="Digite seu nome" />
-
-    <TextView
-        android:id="@+id/navText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="14dp"
-        android:text="@string/navText"
-        app:layout_constraintBottom_toTopOf="@+id/inputText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        tools:text="Faça seu pedido!" />
-
-    <TextView
-        android:id="@+id/amountText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="168dp"
-        android:text="@string/amountText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/onionRingCheckBox"
-        tools:text="Quantidade" />
-
-    <CheckBox
-        android:id="@+id/baconCheckBox"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="18dp"
-        android:text="@string/baconCheckbox"
-        app:layout_constraintBottom_toTopOf="@+id/cheeseCheckbox"
-        app:layout_constraintEnd_toEndOf="@+id/cheeseCheckbox"
-        app:layout_constraintStart_toStartOf="@+id/inputText"
-        app:layout_constraintTop_toBottomOf="@+id/inputText"
-        tools:text="Bacon" />
-
-    <CheckBox
-        android:id="@+id/cheeseCheckbox"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/cheeseCheckbox"
-        app:layout_constraintBottom_toTopOf="@+id/onionRingCheckBox"
-        app:layout_constraintEnd_toEndOf="@+id/onionRingCheckBox"
-        app:layout_constraintStart_toStartOf="@+id/inputText"
-        app:layout_constraintTop_toBottomOf="@+id/baconCheckBox"
-        tools:text="Queijo" />
-
-    <CheckBox
-        android:id="@+id/onionRingCheckBox"
-        android:layout_width="185dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/onionRingCheckBox"
-        app:layout_constraintBottom_toTopOf="@+id/amountText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cheeseCheckbox"
-        tools:text="Onions rings" />
-
-    <TextView
-        android:id="@+id/totalOrderValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="@string/totalOrderValue"
-        app:layout_constraintBottom_toTopOf="@+id/orderButton"
-        app:layout_constraintStart_toStartOf="@+id/totalOrder"
-        tools:text="R$ 0" />
-
-    <Button
-        android:id="@+id/orderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/orderButton"
+        android:layout_height="0dp"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Fazer pedido" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-    <Button
-        android:id="@+id/addValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="@string/addValue"
-        app:layout_constraintBaseline_toBaselineOf="@+id/amountValue"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="+" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/reduceValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:text="@string/reduceValue"
-        app:layout_constraintBaseline_toBaselineOf="@+id/amountValue"
-        app:layout_constraintStart_toEndOf="@+id/amountValue"
-        tools:text="-" />
+            <ImageView
+                android:id="@+id/bannerImage"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="@string/bannerImage"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hamb_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/amountValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginBottom="55dp"
-        android:text="@string/amountValue"
-        app:layout_constraintBottom_toTopOf="@+id/totalOrder"
-        app:layout_constraintStart_toEndOf="@+id/addValue"
-        tools:text="0" />
+            <TextView
+                android:id="@+id/navText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/titleAppText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bannerImage"
+                tools:text="Faça seu pedido!" />
 
-    <TextView
-        android:id="@+id/totalOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="12dp"
-        android:text="@string/totalOrder"
-        app:layout_constraintBottom_toTopOf="@+id/totalOrderValue"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="Resumo do pedido" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/textHint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/navText" />
+
+            <CheckBox
+                android:id="@+id/baconCheckBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/baconCheckbox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/inputText"
+                app:layout_constraintTop_toBottomOf="@+id/inputText" />
+
+            <CheckBox
+                android:id="@+id/cheeseCheckbox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cheeseCheckbox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/inputText"
+                app:layout_constraintTop_toBottomOf="@+id/baconCheckBox" />
+
+            <CheckBox
+                android:id="@+id/onionRingCheckBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/onionRingCheckBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cheeseCheckbox" />
+
+            <TextView
+                android:id="@+id/amountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:text="@string/amountText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/onionRingCheckBox" />
+
+            <Button
+                android:id="@+id/addValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/addValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amountText" />
+
+            <TextView
+                android:id="@+id/amountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="4dp"
+                android:text="@string/amountValue"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@+id/addValue"
+                app:layout_constraintStart_toEndOf="@+id/addValue"
+                app:layout_constraintTop_toTopOf="@+id/addValue" />
+
+            <Button
+                android:id="@+id/reduceValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reduceValue"
+                app:layout_constraintBottom_toBottomOf="@+id/addValue"
+                app:layout_constraintStart_toEndOf="@+id/amountValue"
+                app:layout_constraintTop_toTopOf="@+id/addValue" />
+
+            <TextView
+                android:id="@+id/totalOrder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/detailsTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addValue" />
+
+            <TextView
+                android:id="@+id/totalOrderValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/totalOrder"
+                app:layout_constraintTop_toBottomOf="@+id/totalOrder"
+                tools:text="R$ 0" />
+
+            <Button
+                android:id="@+id/orderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/orderButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalOrderValue" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
