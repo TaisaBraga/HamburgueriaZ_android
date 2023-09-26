@@ -1,12 +1,8 @@
 package com.example.hamburgueriaz;
 
-import static android.content.Intent.ACTION_SENDTO;
-import static android.content.Intent.EXTRA_EMAIL;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -25,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button orderButton, addValue, reduceValue;
 
     private int quantity = 0;
-    private double totalOrderValue = 0.0;
+    private double totalOrderValue = 0.00;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,34 +42,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupListeners() {
-        orderButton.setOnClickListener(view -> enviarPedido());
-        addValue.setOnClickListener(view -> somar());
-        reduceValue.setOnClickListener(view -> subtrair());
+        orderButton.setOnClickListener(view -> sendOrder());
+        addValue.setOnClickListener(view -> addQuantity());
+        reduceValue.setOnClickListener(view -> reduceQuantity());
     }
 
     // Função para somar a quantidade
-    public void somar() {
+    private void addQuantity() {
         if (quantity >= 0) {
             quantity++;
-            atualizarQuantidade(quantity);
+            updateQuantity(quantity);
         }
     }
 
     // Função para subtrair a quantidade
-    public void subtrair() {
+    private void reduceQuantity() {
         if (quantity > 0) {
             quantity--;
-            atualizarQuantidade(quantity);
+            updateQuantity(quantity);
         }
     }
 
     // Função para atualizar a quantidade na view
-    private void atualizarQuantidade(int quantity) {
+    private void updateQuantity(int quantity) {
         amountValueTextView.setText(String.valueOf(quantity));
     }
 
     // Função para calcular o valor total do pedido
-    private void calcularTotal() {
+    private void calculeTotalOrder() {
         totalOrderValue = (quantity * 20.00) +
                 (baconCheckBox.isChecked() ? 2.00 : 0.00) +
                 (cheeseCheckBox.isChecked() ? 2.00 : 0.00) +
@@ -82,32 +78,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Função para enviar o pedido
-    public void enviarPedido() {
-        calcularTotal();
+    private void sendOrder() {
+        calculeTotalOrder();
 
         TextInputEditText userName = findViewById(R.id.inputText);
-        StringBuilder pedidoResumo = new StringBuilder();
-        pedidoResumo.append("Nome: ").append(userName.getText()).append("\n");
-        pedidoResumo.append("Quantidade: ").append(quantity).append("\n");
+        StringBuilder resumeOrder = new StringBuilder();
+        resumeOrder.append("Nome: ").append(userName.getText()).append("\n");
+        resumeOrder.append("Quantidade: ").append(quantity).append("\n");
 
         if (baconCheckBox.isChecked()) {
-            pedidoResumo.append("Adicional: Bacon\n");
+            resumeOrder.append("Adicional: Bacon\n");
         }
         if (cheeseCheckBox.isChecked()) {
-            pedidoResumo.append("Adicional: Queijo\n");
+            resumeOrder.append("Adicional: Queijo\n");
         }
         if (onionRingCheckBox.isChecked()) {
-            pedidoResumo.append("Adicional: Onion Rings\n");
+            resumeOrder.append("Adicional: Onion Rings\n");
         }
 
-        pedidoResumo.append("Valor Total: R$ ").append(totalOrderValue);
+        resumeOrder.append("Valor Total: R$ ").append(totalOrderValue);
 
-        totalOrderValueTextView.setText(pedidoResumo.toString());
+        totalOrderValueTextView.setText(resumeOrder.toString());
 
-        composeEmail("loja@email.com.br", "Pedido de " + userName.getText(), pedidoResumo.toString());
+        composeEmail("hamburgueriaZ@email.com.br", "Pedido de " + userName.getText(), resumeOrder.toString());
     }
 
-    public void composeEmail(String email, String subject, String message) {
+    private void composeEmail(String email, String subject, String message) {
 
         final Intent result = new Intent(android.content.Intent.ACTION_SEND);
         result.setType("plain/text");
